@@ -6,7 +6,7 @@ use std::str::Utf8Error;
 
 pub unsafe fn raw2utf8(data: *const i8, length: usize) -> Result<String, Utf8Error> {
     let slice = slice::from_raw_parts(data as *const u8, length as usize);
-    Ok(try!(str::from_utf8(slice)).to_owned())
+    str::from_utf8(slice).map(|x| x.to_owned())
 }
 
 impl Into<bool> for cass_bool_t {
