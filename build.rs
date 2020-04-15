@@ -12,7 +12,7 @@ fn main() {
     #[cfg(target_os = "macos")]
     println!("cargo:rustc-flags=-l dylib=c++");
     #[cfg(not(target_os = "macos"))]
-    println!("cargo:rustc-flags=-l dylib=stdc++");
+    println!("cargo:rustc-link-lib=static-nobundle=stdc++");
     println!("cargo:rustc-flags=-l static=uv");
     println!("cargo:rustc-link-search={}", "/usr/lib/x86_64-linux-gnu");
     println!("cargo:rustc-link-search={}", "/usr/local/lib/x86_64-linux-gnu");

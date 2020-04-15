@@ -1,3 +1,4 @@
+#![feature(static_nobundle)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 #![cfg_attr(feature="clippy", feature(plugin))]
